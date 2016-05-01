@@ -5,7 +5,7 @@ angular.module('noteShareApp')
 		for (var key in data){
 			fd.append(key, data[key]);
 		}
-		$http.post(uploadUrl, fd, {
+		$http.post(uploadURL, fd, {
 			transformRequest: angular.indentity,
 			headers: {'Content-Type': undefined}
 		})
