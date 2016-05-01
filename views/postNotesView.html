@@ -11,13 +11,13 @@
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="poster">Poster</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="poster" placeholder="Enter name">
+					<input type="text" class="form-control" id="poster" placeholder="Enter name" ng-model="newNote.poster">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="date">Date</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="date" placeholder="Enter date">
+					<input type="text" class="form-control" id="date" placeholder="Enter date" ng-model="newNote.date">
 				</div>
 			</div>
 
@@ -25,34 +25,39 @@
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Topic</label>
 				<div class="col-sm-6"> 
-					<input type="text" class="form-control" id="topic" placeholder="Enter topic">
+					<input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="newNote.topic">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Course</label>
 				<div class="col-sm-6"> 
-					<input type="text" class="form-control" id="course" placeholder="Enter course">
+					<input type="text" class="form-control" id="course" placeholder="Enter course" ng-model="newNote.course">
 				</div>
 			</div>
 
 			<div class="form-group"> 
 				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Upload Files</label>
 				<div class="col-sm-6"> 
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="fileToUpload" id="fileToUpload" 
+					file-model="newNote.file">
 				</div>
 			</div>
 			<br><br>
 
 			<div class="form-group"> 
 				<div class="col-sm-offset-6 col-sm-2">
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default"
+					ng-click="uploadData()">Submit</button>
 				</div>
 			</div>
 
 		</form>
 	</div>
 
-	<h3>{{data.notes}}</h3>
+	<h3>{{newNote.poster}}</h3>
+	<h3>{{newNote.date}}</h3>
+	<h3>{{newNote.course}}</h3>
+	<h3>{{newNote.topic}}</h3>
 
 </div>
