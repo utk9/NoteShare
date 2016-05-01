@@ -1,2 +1,2 @@
 # NoteShare
-Web app for student to easily share notes built using MEAN stack .
+Web app for students to easily share notes built using MEAN stack .
