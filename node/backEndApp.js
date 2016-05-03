@@ -11,6 +11,7 @@ app.use("/services", express.static(__dirname + '/../services'));
 app.use("/modules", express.static(__dirname + '/../modules'));
 app.use("/controllers", express.static(__dirname + '/../controllers'));
 app.use("/views", express.static(__dirname + '/../views'));
+
 app.get("/", function(req, res){
 	res.writeHead(200, {'Content-type':'text/html'});
 	fs.createReadStream("../index.html").pipe(res);
@@ -41,7 +42,8 @@ app.get('/allNotes', function(req, res){
 		if (err) {
 			console.log(err);
 		} else{
-			res.send(notes);
+			res.status(200);
+			res.json(notes);
 		}
 	});
 });
@@ -81,7 +83,7 @@ app.post('/uploadData', function(req, res){
   				console.log("Added to database.");
   			}
 		});
-  		res.end("hello");
+  		res.end("Uploaded");
   	});
 
   	form.on('error', function(err){

@@ -1,3 +1,29 @@
 <div class="container">
-	<p>Hello</p>
+	<div class="panel panel-default" ng-repeat="note in data.notes">
+		<div class="panel-heading"><div class="row">
+				<div class="col-xs-3">
+
+					{{note.course}}
+				</div>
+				<div class="col-xs-3">
+
+					{{note.topic}}
+				</div>
+				<div class="col-xs-3">
+
+					{{note.poster}}
+				</div>
+				<div class="col-xs-3">
+
+					{{note.date}}
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+			<span>
+				<img ng-src="http://localhost:8888/uploadedFiles/{{note.filePaths[0]}}"
+				style="width: 100px; height: 100px;"/>
+			</span>
+		</div>
+	</div>
 </div>
