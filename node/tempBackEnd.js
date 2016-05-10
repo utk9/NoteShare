@@ -61,7 +61,7 @@ var storage = multer.diskStorage({
     callback(null, filename);
 }
   });
-var upload = multer({ storage: storage }).single('file');
+var upload = multer({ storage: storage }).any();
 
 //RESTful API:
 app.get('/allNotes', function(req, res){
@@ -83,13 +83,20 @@ app.post('/uploadData', function(req, res){
 			console.log(err);
 			
 		} else {
+			console.log(req.files.length);
 			var mPoster = req.body.poster;
 	var mDate = req.body.date;
 	var mCourse = req.body.course;
 	var mTopic = req.body.topic;
 	var mFilenames= [];
-	mFilenames.push(req.file.filename);
-	console.log(mFilenames);
+
+	req.files.forEach(function(file, index){
+		mFilenames.push(file.filename);
+		console.log("added file name: " + file.filename);
+	});
+
+	// mFilenames.push(req.file.filename);
+	// console.log(mFilenames);
 
 	var newNote = new Note({
 			poster: mPoster,

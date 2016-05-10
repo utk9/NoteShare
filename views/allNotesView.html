@@ -20,8 +20,8 @@
 			</div>
 		</div>
 		<div class="panel-body">
-			<span>
-				<img ng-src="http://localhost:8888/uploadedFiles/{{note.filePaths[0]}}"
+			<span ng-repeat="path in note.filePaths">
+				<img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
 				style="width: 100px; height: 100px;"/>
 			</span>
 		</div>
