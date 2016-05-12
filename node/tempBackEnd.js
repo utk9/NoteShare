@@ -77,6 +77,8 @@ app.get('/allNotes', function(req, res){
 
 app.post('/uploadData', function(req, res){
 
+	console.log("uploading data");
+
 	upload(req, res, function(err){
 		if (err){
 			console.log("ERRRORRRR");

@@ -1,5 +1,6 @@
 <div class="container">
-	<div class="panel panel-default" ng-repeat="note in data.notes">
+	<input type="search" ng-model="searchQuery" placeholder = "Search..." >
+	<div class="panel panel-default" ng-repeat="note in data.notes | filter: searchQuery">
 		<div class="panel-heading"><div class="row">
 				<div class="col-xs-3">
 
