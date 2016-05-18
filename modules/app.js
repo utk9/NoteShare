@@ -8,6 +8,9 @@ app.config( ['$routeProvider', function($routeProvider) {
 			.when('/postNotes', {
 				templateUrl: 'views/postNotesView.html'
 			})
+			.when('/',{
+				templateUrl: 'views/mainPageView.html'
+			})
 			.otherwise({
 				//redirectTo: 'view/mainPageView.html'
 				templateUrl: 'views/mainPageView.html'

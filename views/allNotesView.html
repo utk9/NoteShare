@@ -1,30 +1,45 @@
-<div class="container">
-	<input type="search" ng-model="searchQuery" placeholder = "Search..." >
-	<div class="panel panel-default" ng-repeat="note in data.notes | filter: searchQuery">
-		<div class="panel-heading"><div class="row">
-				<div class="col-xs-3">
+<div class="container" ng-controller="allNotesCtrl">
+	
 
-					{{note.course}}
-				</div>
-				<div class="col-xs-3">
-
-					{{note.topic}}
-				</div>
-				<div class="col-xs-3">
-
-					{{note.poster}}
-				</div>
-				<div class="col-xs-3">
-
-					{{note.date}}
-				</div>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="control-label col-sm-offset-1 col-sm-2">Search:</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="poster" placeholder="Course, topic, date" ng-model="searchQuery">
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-primary" ng-click="clearSearch()">Clear search</button>
 			</div>
 		</div>
-		<div class="panel-body">
-			<span ng-repeat="path in note.filePaths">
-				<img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
-				style="width: 100px; height: 100px;"/>
-			</span>
+	</form>
+
+<div class="row">
+
+	<div class="col-sm-6" style="padding: 15px" ng-repeat="note in data.notes | filter: searchQuery">
+		<div style="border: 1px solid #286090; padding: 10px">
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>{{note.course}}</h3>
+					<h4>{{note.topic}}</h4>
+				</div class="col-sm6">
+				<div class="col-sm-6">
+					<h5>Dated {{note.date}}</h5>
+					<h5><a ng-click="setQuery(note.poster)">Posted by {{note.poster}}</a></h5>
+				</div class="col-sm6">
+			</div>
+			<div class="row">
+				<span ng-repeat="path in note.filePaths" style="padding: 15px">
+					<img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
+					style="width: 100px; height: 100px;"/>
+				</span>
+			</div>
+
+
+
 		</div>
 	</div>
 </div>
+
+</div>
+
+

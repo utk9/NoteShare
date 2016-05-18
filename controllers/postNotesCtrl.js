@@ -4,7 +4,7 @@ angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipart
 		$scope.newNote = {};
 		
 
-			$('#filesToUpload').change(function ()
+			$('#filesToUpload').on("change", function ()
 			{	
 				$scope.newNote.file = [];
 				$scope.temp = this.files.length;
@@ -19,7 +19,6 @@ angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipart
 			$scope.data.notes.push($scope.newNote);
 			var uploadURL = '/uploadData';
 			multipartForm.post(uploadURL, $scope.newNote);
-			
 		};
 
 

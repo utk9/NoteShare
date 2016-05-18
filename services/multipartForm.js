@@ -1,5 +1,5 @@
 angular.module('noteShareApp')
-.service('multipartForm',['$http', function($http){
+.service('multipartForm',['$http', '$location', function($http, $location){
 	this.post = function(uploadURL, data){
 		var fd = new FormData();
 		for (var key in data){
@@ -11,6 +11,7 @@ angular.module('noteShareApp')
 		})
 		.success(function(){
 			console.log('data uploaded successfully')
+			$location.path("/");
         })
         .error(function(err){
         	console.log(err);
