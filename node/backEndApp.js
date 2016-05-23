@@ -43,6 +43,8 @@ app.get('/allNotes', function(req, res){
 			console.log(err);
 		} else{
 			res.status(200);
+			notes.reverse();
+			console.log(notes);
 			res.json(notes);
 		}
 	});

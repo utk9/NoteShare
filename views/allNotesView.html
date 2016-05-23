@@ -13,32 +13,34 @@
 		</div>
 	</form>
 
-<div class="row">
+	<button type="button" class="btn btn-success" ng-click="refreshData()">Refresh Data</button>
 
-	<div class="col-sm-6" style="padding: 15px" ng-repeat="note in data.notes | filter: searchQuery">
-		<div style="border: 1px solid #286090; padding: 10px">
-			<div class="row">
-				<div class="col-sm-6">
-					<h3>{{note.course}}</h3>
-					<h4>{{note.topic}}</h4>
-				</div class="col-sm6">
-				<div class="col-sm-6">
-					<h5>Dated {{note.date}}</h5>
-					<h5><a ng-click="setQuery(note.poster)">Posted by {{note.poster}}</a></h5>
-				</div class="col-sm6">
+	<div class="row">
+
+		<div class="col-sm-6" style="padding: 15px" ng-repeat="note in data.notes | filter: searchQuery">
+			<div style="border: 1px solid #286090; padding: 10px">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3><a ng-click="setQuery(note.course)">{{note.course}}</a></h3>
+						<h4><a ng-click="setQuery(note.topic)">{{note.topic}}</a></h4>
+					</div class="col-sm6">
+					<div class="col-sm-6">
+						<h5>Dated <a ng-click="setQuery(note.date)">{{note.date}}</a></h5>
+						<h5>Posted by <a ng-click="setQuery(note.poster)">{{note.poster}}</a></h5>
+					</div class="col-sm6">
+				</div>
+				<div class="row">
+					<span ng-repeat="path in note.filePaths" style="padding: 15px">
+						<img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
+						style="width: 100px; height: 100px;"/>
+					</span>
+				</div>
+
+
+
 			</div>
-			<div class="row">
-				<span ng-repeat="path in note.filePaths" style="padding: 15px">
-					<img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
-					style="width: 100px; height: 100px;"/>
-				</span>
-			</div>
-
-
-
 		</div>
 	</div>
-</div>
 
 </div>
 

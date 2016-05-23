@@ -45,13 +45,16 @@
 			</div>
 			<br><br>
 
-			<div class="form-group"> 
+			
+
+			<div class="form-group text-center"> 
 		
-				<div class="col-sm-offset-6 col-sm-2">
 					<button type="submit" class="btn btn-default"
 					ng-click="uploadData()">Submit</button>
-				</div>
+
 			</div>
+
+			<span ng-show="isError" class="error"><p class="text-center">Error: Please fill out all feilds</p></span>
 		</form>
 
 	</div>
