@@ -1,8 +1,6 @@
 angular.module('noteShareApp').controller("allNotesCtrl", ['$scope', '$http',
 	function($scope, $http) {
 
-		
-
 		$scope.clearSearch = function(){
 			console.log("clear clicked");
 			$scope.searchQuery = "";

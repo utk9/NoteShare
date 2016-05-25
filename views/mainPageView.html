@@ -1,28 +1,36 @@
-	<div class="container">
-		<h2>Search for notes</h2>
-		<div class="row">
-			<div class="col-xs-3">
-				<div class="dropdown">
-			<label>Search By:</label>
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Dropdown
-				<span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><a href="#">Class</a></li>
-				<li><a href="#">Poster</a></li>
-			</ul>
-		</div>
-			</div>
-			<div class="col-xs-8">
-				<div class="form-group">
-			<input type="text" class="form-control" placeholder="eg. ECE106, Jeff">
-		</div>
-			</div>
-			<div class="col-xs-1">
-				<button type="button" class="btn btn-success">Search</button>
-			</div>
-		</div>
+	<div class="jumbotron">
 
-		<h2>Post Notes</h2>
+	<div class="container-fluid text-center">
+		
+
+			<h1 id="jombo-text"><strong>Note</strong>Share</h1>
+			<p><span class="yellow-underline">Simple</span>, <span class="yellow-underline">quick</span> note sharing.</p>
+			
+		<br>	
+		<br>
+
+		<span id="main-text">
+
+		<form class="form-horizontal">
+			<div class="form-group" >	
+				<label class="control-label col-sm-offset-1 col-sm-2" style="margin-top: 10px; font-size:1.5em;" for="search"><strong>Find</strong> Notes:</label>
+
+
+				<div class="col-sm-5"  style="margin-top: 10px;">
+					<input type="text" class="form-control" id="search" placeholder="Eg. ECE106" ng-model="$parent.searchQuery">
+				</div>
+				<button class="btn btn-success col-sm-1"  style="margin-top: 10px;" ng-click="goAllNotes()">Search</button>
+			</div>
+		</form>
+
+		<img id="separator" src="/images/orSeparator.png"/>
+		<br>
+		<br>
+
+		<button type="button" id="post-button" class="btn btn-primary" ng-click="goPostNotes()"><strong>Post</strong> Notes</button>
+		
+
+	</span>
 	</div>
+
+</div>

@@ -12,6 +12,7 @@ app.use("/modules", express.static(__dirname + '/../modules'));
 app.use("/controllers", express.static(__dirname + '/../controllers'));
 app.use("/views", express.static(__dirname + '/../views'));
 app.use("/css", express.static(__dirname + '/../css'));
+app.use("/images", express.static(__dirname + '/../images'));
 
 app.get("/", function(req, res){
 	res.writeHead(200, {'Content-type':'text/html'});

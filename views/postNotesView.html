@@ -18,15 +18,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="date">Date</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="date" placeholder="Enter date" ng-model="newNote.date">
-				</div>
-			</div>
-
-
-			<div class="form-group">
-				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Topic</label>
-				<div class="col-sm-6"> 
-					<input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="newNote.topic">
+					<input type="text" class="form-control" id="date" placeholder="Enter date" ng-model="newNote.date" datepicker>
 				</div>
 			</div>
 
@@ -36,6 +28,15 @@
 					<input type="text" class="form-control" id="course" placeholder="Enter course" ng-model="newNote.course">
 				</div>
 			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Topic</label>
+				<div class="col-sm-6"> 
+					<input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="newNote.topic">
+				</div>
+			</div>
+
+			
 
 			<div class="form-group"> 
 				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Upload Files</label>
