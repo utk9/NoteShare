@@ -23,8 +23,8 @@ html, body{
 .navbar{
 	border: none;
 	border-radius: 0px;
- 	background: #025e72;
- 	margin: 0px;
+	background: #025e72;
+	margin: 0px;
 }
 
 .navbar-link{
@@ -38,7 +38,7 @@ html, body{
 }
 
 #post-button{
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .jumbotron{
@@ -56,7 +56,7 @@ html, body{
 .jumbotron #jombo-text{
 	color: #f7f700;
 	font-family:'Roboto', sans-serif;
-	font-size: 7em;
+	font-size: 5em;
 }
 
 .jumbotron #main-text{

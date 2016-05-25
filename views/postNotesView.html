@@ -1,4 +1,4 @@
-<div class="container" ng-controller="postNotesCtrl">
+<div class="container" ng-controller="postNotesCtrl" style="margin-top:30px;">
 	<div class="row">
 		<div class="col-sm-12">
 			<h1 class="text-center">Post notes</h1>
@@ -8,6 +8,7 @@
 	<br><br>
 	
 	<div class="row">
+		<div class="container">
 		<form class="form-horizontal" role="form" enctype="multipart/form-data">
 			<div class="form-group">
 				<label class="control-label col-sm-offset-1 col-sm-2" for="poster">Poster</label>
@@ -57,6 +58,7 @@
 
 			<span ng-show="isError" class="error"><p class="text-center">Error: Please fill out all feilds</p></span>
 		</form>
+	</div>
 
 	</div>
 
