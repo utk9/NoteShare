@@ -67,3 +67,34 @@ html{
 .jumbotron #main-text{
 	font-family: 'Roboto';
 }
+
+.note-box{
+	border: 1px solid #286090; 
+	padding: 10px;
+	border-radius: 2px;
+	background-color: #F6F6F6;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+
+			    -webkit-transition: box-shadow 200ms ease-out 200ms;
+    -moz-transition: box-shadow 200ms ease-out 200ms;
+    -o-transition: box-shadow 200ms ease-out 200ms;
+    transition: box-shadow 200ms ease-out 200ms;
+}
+
+.note-box:hover{
+	box-shadow: none;
+	
+
+}
+
+.note-pic{
+	width: 170px; 
+	height: auto; 
+	border-radius: 2px; 
+	margin: 10px;
+}
+
+.note-pic:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
