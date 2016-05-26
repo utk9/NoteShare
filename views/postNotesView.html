@@ -56,7 +56,10 @@
 
 			</div>
 
-			<span ng-show="isError" class="error"><p class="text-center">Error: Please fill out all feilds</p></span>
+			<span ng-show="errorMsg" class="error"><p class="text-center">{{errorMsg}}</p></span>
+
+			<li ng-repeat="name in fileNames">{{name}}</li>
+			
 		</form>
 	</div>
 
