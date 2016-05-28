@@ -1,7 +1,7 @@
 angular.module('noteShareApp').controller("allNotesCtrl", ['$scope', '$http',
 	function($scope, $http) {
 
-		
+		$scope.baseURL = "http://localhost:8888";
 
 		$scope.hideSuccessMsg();
 

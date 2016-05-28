@@ -27,7 +27,7 @@ app.get(("/uploadedFiles/:name"), function(req, res){
                 console.log(err);
                 res.end("No such image");    
             } else {
-                res.writeHead(200,{'Content-type':'image/png'});
+                res.writeHead(200);
                 res.end(content);
             }
         });

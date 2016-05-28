@@ -31,7 +31,7 @@
 				</div>
 				<div class="row">
 					<span ng-repeat="path in note.filePaths" style="padding: 15px">
-						<a href="http://localhost:8888/uploadedFiles/{{path}}" target="_blank"><img ng-src="http://localhost:8888/uploadedFiles/{{path}}"
+						<a href="{{baseURL}}/uploadedFiles/{{path}}" target="_blank"><img ng-src="{{baseURL}}/uploadedFiles/{{path}}"
 						class="note-pic"/></a>
 					</span>
 				</div>

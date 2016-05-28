@@ -1,22 +1,32 @@
-angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipartForm',
+angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipartForm', 
 	function($scope, multipartForm) {
 		
 		$scope.newNote = {};
 		$scope.errorMsg = null;
+		$scope.uploadedInvalidFile = false;
 		$scope.fileNames = [];
 		var numFiles = 0;
 
 		$scope.hideSuccessMsg();
 
 		
-		
 		$('#filesToUpload').on("change", function ()
 		{	
+			var tempNumFiles = 0;
 			for (var i=0; i<this.files.length; i++){
-				$scope.newNote[i] = this.files[i];
+				if (this.files[i].type.indexOf("image")>-1 || this.files[i].type == "application/pdf"){
+					console.log("okay");
+					$scope.newNote[i] = this.files[i];
 				$scope.fileNames[i] = this.files[i].name;
+				tempNumFiles++;
+				} else {
+					$scope.uploadedInvalidFile = true;
+					$scope.$apply();
+					return;
+				}		
 			}
-			numFiles = this.files.length;
+			$scope.uploadedInvalidFile = false;
+			numFiles = tempNumFiles;
 			$scope.$apply();
 		});	
 
@@ -30,8 +40,11 @@ angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipart
 			$scope.errorMsg = "Please upload file(s).";
 		}
 		else {
-			multipartForm.post(uploadURL, $scope.newNote);
+			if (!($scope.uploadedInvalidFile)){
+				multipartForm.post(uploadURL, $scope.newNote);
 			$scope.showSuccessMsg();
+			}
+			
 		}
 
 		

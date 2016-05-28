@@ -41,8 +41,11 @@
 
 				<div class="form-group"> 
 					<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Upload Files</label>
-					<div class="col-sm-6"> 
-						<input type="file" multiple="multiple" name="file" id="filesToUpload">
+					<div class="col-sm-3"> 
+						<input type="file" multiple="multiple" name="file" id="filesToUpload" accept="image/*, application/pdf">
+					</div>
+					<div class="col-sm-3">
+						Note: Only PDFs and images allowed.
 					</div>
 				</div>
 				<br>
@@ -66,8 +69,12 @@
 				</div>
 
 				<div ng-show="errorMsg" class="alert alert-danger alert-dismissible fade in text-center" role="alert">
-					<strong>Whoa!</strong> {{errorMsg}}
+					<strong>Oops!</strong> {{errorMsg}}
 				</div>
+				<div ng-show="uploadedInvalidFile" class="alert alert-danger alert-dismissible fade in text-center" role="alert">
+					<strong>Whoa!</strong> Invalid file type.
+				</div>
+
 
 			</form>
 		</div>
