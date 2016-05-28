@@ -3,6 +3,16 @@ angular.module('noteShareApp').controller("noteShareCtrl", ['$scope', '$http', '
 	$scope.dataURL = 'allNotes';
   	$scope.data = {};
 
+    $scope.uploadSuccessful = false;
+
+    $scope.showSuccessMsg = function(){
+      $scope.uploadSuccessful = true;
+    }
+
+    $scope.hideSuccessMsg = function(){
+      $scope.uploadSuccessful = false;
+    }
+
     $scope.clearSearch = function(){
       $scope.searchQuery = "";
     }
@@ -13,8 +23,11 @@ angular.module('noteShareApp').controller("noteShareCtrl", ['$scope', '$http', '
 
   	$scope.goAllNotes = function(){
   		$location.path('/allNotes');
-  		console.log($scope.searchQuery);
+      console.log($scope.uploadSuccessful);
   	}
+
+
+
 
 	$http.get($scope.dataURL).success(function(data){
 		$scope.data.notes = data;

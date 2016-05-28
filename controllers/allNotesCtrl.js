@@ -1,6 +1,11 @@
 angular.module('noteShareApp').controller("allNotesCtrl", ['$scope', '$http',
 	function($scope, $http) {
 
+		
+
+		$scope.hideSuccessMsg();
+
+
 		$scope.clearSearch = function(){
 			console.log("clear clicked");
 			$scope.searchQuery = "";
@@ -10,7 +15,7 @@ angular.module('noteShareApp').controller("allNotesCtrl", ['$scope', '$http',
 			$scope.searchQuery = query;
 		}
 
-		$scope.refreshData = function(query){
+		$scope.refreshData = function(){
 			$http.get($scope.dataURL).success(function(data){
 				$scope.data.notes = data;
 				console.log($scope.data);
@@ -19,6 +24,8 @@ angular.module('noteShareApp').controller("allNotesCtrl", ['$scope', '$http',
 			});
 
 		}
+
+		$scope.refreshData();
 
 
 

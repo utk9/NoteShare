@@ -9,59 +9,68 @@
 	
 	<div class="row">
 		<div class="container">
-		<form class="form-horizontal" role="form" enctype="multipart/form-data">
-			<div class="form-group">
-				<label class="control-label col-sm-offset-1 col-sm-2" for="poster">Poster</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="poster" placeholder="Enter name" ng-model="newNote.poster">
+			<form class="form-horizontal" role="form" enctype="multipart/form-data">
+				<div class="form-group">
+					<label class="control-label col-sm-offset-1 col-sm-2" for="poster">Poster</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="poster" placeholder="Enter name" ng-model="newNote.poster">
+					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<label class="control-label col-sm-offset-1 col-sm-2" for="date">Date</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="date" placeholder="Enter date" ng-model="newNote.date" datepicker>
+				<div class="form-group">
+					<label class="control-label col-sm-offset-1 col-sm-2" for="date">Date</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="date" placeholder="Enter date" ng-model="newNote.date" datepicker>
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Course</label>
-				<div class="col-sm-6"> 
-					<input type="text" class="form-control" id="course" placeholder="Enter course" ng-model="newNote.course">
+				<div class="form-group">
+					<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Course</label>
+					<div class="col-sm-6"> 
+						<input type="text" class="form-control" id="course" placeholder="Enter course" ng-model="newNote.course">
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Topic</label>
-				<div class="col-sm-6"> 
-					<input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="newNote.topic">
+				<div class="form-group">
+					<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Topic</label>
+					<div class="col-sm-6"> 
+						<input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="newNote.topic">
+					</div>
 				</div>
-			</div>
 
-			
 
-			<div class="form-group"> 
-				<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Upload Files</label>
-				<div class="col-sm-6"> 
-					<input type="file" multiple="multiple" name="file" id="filesToUpload">
+
+				<div class="form-group"> 
+					<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Upload Files</label>
+					<div class="col-sm-6"> 
+						<input type="file" multiple="multiple" name="file" id="filesToUpload">
+					</div>
 				</div>
-			</div>
-			<br><br>
+				<br>
 
-			
+				
 
-			<div class="form-group text-center"> 
-		
+				<div class="form-group text-center"> 
+
 					<button type="submit" class="btn btn-success"
-					ng-click="uploadData()">Submit</button>
+					ng-click="uploadData()"><strong>Submit</strong></button>
 
-			</div>
+				</div>
 
-			<span ng-show="errorMsg" class="error"><p class="text-center">{{errorMsg}}</p></span>
+				<div ng-show="fileNames.length > 0" class="form-group"> 
+					<label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Files</label>
+					<div class="col-sm-6"> 
+					<ul style="list-style-type: none;">
+						<li ng-repeat="name in fileNames">{{name}}</li>
+						</ul>
+					</div>
+				</div>
 
-			<li ng-repeat="name in fileNames">{{name}}</li>
-			
-		</form>
-	</div>
+				<div ng-show="errorMsg" class="alert alert-danger alert-dismissible fade in text-center" role="alert">
+					<strong>Whoa!</strong> {{errorMsg}}
+				</div>
+
+			</form>
+		</div>
 
 	</div>
 

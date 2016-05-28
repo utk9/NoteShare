@@ -14,6 +14,9 @@ a:hover {
 	border-bottom: 2px solid #f7f700;
 }
 
+.error{
+	color: red;
+}
 
 
 body{

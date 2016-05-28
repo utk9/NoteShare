@@ -5,6 +5,10 @@ angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipart
 		$scope.errorMsg = null;
 		$scope.fileNames = [];
 		var numFiles = 0;
+
+		$scope.hideSuccessMsg();
+
+		
 		
 		$('#filesToUpload').on("change", function ()
 		{	
@@ -21,13 +25,18 @@ angular.module('noteShareApp').controller("postNotesCtrl", ['$scope', 'multipart
 
 			if ($scope.newNote.poster==undefined || $scope.newNote.date==undefined || 
 				$scope.newNote.date==undefined || $scope.newNote.course==undefined){
-				$scope.errorMsg = "Please fill out all the fields";
+				$scope.errorMsg = "Please fill out all the fields.";
 		} else if (numFiles < 1){
 			$scope.errorMsg = "Please upload file(s).";
 		}
 		else {
 			multipartForm.post(uploadURL, $scope.newNote);
+			$scope.showSuccessMsg();
 		}
+
+		
+
+
 	};
 
 
