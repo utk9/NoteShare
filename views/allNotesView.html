@@ -30,13 +30,16 @@
 					</div class="col-sm6">
 				</div>
 				<div class="row">
-					<span ng-repeat="path in note.filePaths" style="padding: 15px">
-						<a href="{{baseURL}}/uploadedFiles/{{path}}" target="_blank"><img ng-src="{{baseURL}}/uploadedFiles/{{path}}"
+					<span ng-repeat="path in note.filePaths" style="padding-left: 15px">
+						<a href="{{baseURL}}/uploadedFiles/{{path}}" target="_blank"><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-file"></i></button></a>
+					</span>
+				</div>
+				<div>
+					<span ng-repeat="path in note.imagePaths" style="padding: 15px">
+						<a href="{{baseURL}}/uploadedImages/{{path}}" target="_blank"><img ng-src="{{baseURL}}/uploadedImages/{{path}}"
 						class="note-pic"/></a>
 					</span>
 				</div>
-
-
 
 			</div>
 
