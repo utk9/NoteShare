@@ -48,7 +48,7 @@ app.get(("/uploadedImages/:name"), function(req, res){
 		if (err) {
 			res.writeHead(400, {'Content-type':'text/html'})
 			console.log(err);
-			res.end("No such image");    
+			res.end("No such file.");    
 		} else {
 			res.writeHead(200);
 			res.end(content);
@@ -80,7 +80,7 @@ var Note = mongoose.model('Note', noteSchema);
 var storage = multer.diskStorage({
 	destination: function (req, file, callback) {
 		console.log(file.mimetype);
-		if (file.mimetype == "image/png"){
+		if (file.mimetype.indexOf("image") > -1){
 			callback(null, '../uploadedImages'); 
 		} else {
 			callback(null, '../uploadedFiles'); 
@@ -126,7 +126,7 @@ app.post('/uploadData', function(req, res){
 			var mImagenames = [];
 
 			req.files.forEach(function(file, index){
-				if (file.mimetype == "image/png"){
+				if (file.mimetype.indexOf("image") > -1){
 					mImagenames.push(file.filename);
 				} else {
 					mFilenames.push(file.filename);
