@@ -45,7 +45,7 @@ router.get(("/uploadedImages/:name"), function(req, res){
 });
 
 
-mongoose.connect("mongodb://localhost/NotesDB", function(err){
+mongoose.connect(process.env.DB_URI, function(err){
 	if (err){
 		console.log(err);
 	} else {
