@@ -46,7 +46,6 @@ router.get(("/uploadedImages/:name"), function(req, res){
 
 
 mongoose.connect(process.env.DB_URI, function(err){
-	console.log(process.env.DB_URI);
 	if (err){
 		console.log(err);
 	} else {
