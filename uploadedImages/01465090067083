@@ -1,0 +1,70 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+
+unsigned long* checkIfSeen(unsigned long num, unsigned long arr[10]){
+	while (num!=0){
+		unsigned long temp = num%10;
+		num=num/10;
+		arr[temp] += 1;
+
+	}
+	return arr;
+
+}
+
+bool checkArray(unsigned long arr[10]){
+	for (unsigned long i = 0; i<10; i++){
+		if (arr[i] == 0) return false;
+	}
+	return true;
+}
+
+unsigned long findLastNum(unsigned long N, unsigned long caseNumber, unsigned long arr[10]){
+
+	if (N==0){
+		return -1;
+	}
+	bool islastNumber = false;
+	unsigned long numToCheck = N;
+	unsigned long i = 1;
+	while (true){
+		arr= checkIfSeen(numToCheck, arr);
+		if (checkArray(arr)){
+			break;
+		}
+		numToCheck = N*i;
+		i+=1;
+
+	}
+	return numToCheck;
+}
+
+int main (int argc, const char* argv[]){
+	ofstream file;
+	ifstream inputFile;
+	inputFile.open("A-large.in");
+	file.open("results.txt");
+	unsigned long N;
+	unsigned long numCases;
+	unsigned long temp = 1;
+	inputFile >> numCases;
+	while (temp<=numCases){
+		unsigned long arr[10] = {0};
+		inputFile >> N;
+		unsigned long a = findLastNum(N, temp, arr);
+		if (a != -1){
+			file << "Case #" << temp << ": "<< a << endl;
+
+		} else{
+			file << "Case #" << temp << ": "<< "INSOMNIA" << endl;
+		}
+		
+		temp+=1;
+		
+	}
+	file.close();
+	return 0;
+	
+}

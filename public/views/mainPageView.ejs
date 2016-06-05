@@ -1,0 +1,49 @@
+	<div class="jumbotron">
+
+		<div class="container-fluid text-center">
+
+
+			<h1 id="jombo-text"><strong>Note</strong>Share</h1>
+			<p><span class="yellow-underline">Simple</span>, <span class="yellow-underline">quick</span> note sharing.</p>
+			
+			<br>	
+			<br>
+
+			<span id="main-text">
+
+				<form class="form-horizontal">
+					<div class="form-group" >	
+						<label class="control-label col-sm-offset-1 col-sm-2" style="margin-top: 10px; font-size:1.5em;" for="search"><strong>Find</strong> Notes:</label>
+
+
+						<div class="col-sm-5"  style="margin-top: 10px;">
+							<input type="text" class="form-control" id="search" placeholder="Eg. ECE106" ng-model="searchQuery">
+						</div>
+						<button class="btn btn-success col-sm-1" style="margin-top: 10px;" ng-click="goAllNotes()"><strong><i class="glyphicon glyphicon-search"></i></strong></button>
+					</div>
+				</form>
+
+				<img id="separator" src="/images/orSeparator.png"/>
+				<br>
+				<br>
+
+				<button type="button" id="post-button" class="btn btn-default" ng-click="goPostNotes()"><strong>Post</strong> Notes</button>
+
+
+			</span>
+
+			
+			<div class="row" ng-show="isUploadSuccessful">
+			<div class="col-xs-12">
+			<div style="width:50%; margin: 0 auto; margin-top:20px;" class="alert alert-success alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<strong>Yay!</strong> Note Added.
+			</div>
+			</div>
+			</div>	
+
+		</div>
+
+	</div>
